@@ -1,12 +1,25 @@
 # QFlash
 
-Description: Allows for the user to answer quiz questions in a classroom setting both open ended and free response.
+## Table of Contents
+1. [Overview](#Overview)
+1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
+2. [Schema](#Schema)
 
-App Evaluation:
-Mobile app for students and faculty to use on their phones
-This is good in most college and school markets
-This would be readily used amongst college campus as opposed to other quiz related software that do not allow for students to answer both open ended and multiple choice questions for free
+## Overview
+### Description
+Allows for the user to answer quiz questions in a classroom setting both open ended and free response.
 
+### App Evaluation
+[Evaluation of your app across the following attributes]
+- **Category:Education Application**
+- **Mobile:Studnets can answer questions on their mobile phones**
+- **Story:This application allows for students to answer open ended or multiple choice questions at no expense to them which is not allowed an any similar form of software**
+- **Market: students and faculty at colleges or universities**
+- **Habit: Used once or twice within a class period**
+- **Scope:Anyone who needs to take attendence or ask questions within a classroom or a professional setting**
+
+##Product Spec
 ## 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
