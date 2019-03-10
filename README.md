@@ -70,4 +70,4 @@ This would be readily used amongst college campus as opposed to other quiz relat
  * Setting 
      * =>None
 
-
+![](https://github.com/cs49000group/QFlash/blob/master/Wireframe.jpeg)
