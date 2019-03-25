@@ -1,0 +1,6 @@
+framework module Pods_QFlashUITests {
+  umbrella header "Pods-QFlashUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
