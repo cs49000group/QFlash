@@ -14,6 +14,12 @@
 		6EE9F03A22498D7700E6296E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE9F03822498D7700E6296E /* LaunchScreen.storyboard */; };
 		6EE9F04522498D7700E6296E /* QFlashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F04422498D7700E6296E /* QFlashTests.swift */; };
 		6EE9F05022498D7700E6296E /* QFlashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F04F22498D7700E6296E /* QFlashUITests.swift */; };
+		6EE9F05E2249902200E6296E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F05D2249902200E6296E /* LoginViewController.swift */; };
+		6EE9F0602249902900E6296E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F05F2249902900E6296E /* ProfileViewController.swift */; };
+		6EE9F0622249903000E6296E /* ClassFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F0612249903000E6296E /* ClassFeedViewController.swift */; };
+		6EE9F0642249903600E6296E /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F0632249903600E6296E /* CreateClassViewController.swift */; };
+		6EE9F0662249903D00E6296E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F0652249903D00E6296E /* SettingsViewController.swift */; };
+		6EE9F0682249904500E6296E /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F0672249904500E6296E /* AnswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		6EE9F04B22498D7700E6296E /* QFlashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QFlashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE9F04F22498D7700E6296E /* QFlashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFlashUITests.swift; sourceTree = "<group>"; };
 		6EE9F05122498D7700E6296E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE9F05D2249902200E6296E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6EE9F05F2249902900E6296E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6EE9F0612249903000E6296E /* ClassFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFeedViewController.swift; sourceTree = "<group>"; };
+		6EE9F0632249903600E6296E /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
+		6EE9F0652249903D00E6296E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6EE9F0672249904500E6296E /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,12 @@
 				6EE9F02F22498D7600E6296E /* AppDelegate.swift */,
 				6EE9F03122498D7600E6296E /* ViewController.swift */,
 				6EE9F03322498D7600E6296E /* Main.storyboard */,
+				6EE9F05D2249902200E6296E /* LoginViewController.swift */,
+				6EE9F05F2249902900E6296E /* ProfileViewController.swift */,
+				6EE9F0612249903000E6296E /* ClassFeedViewController.swift */,
+				6EE9F0632249903600E6296E /* CreateClassViewController.swift */,
+				6EE9F0652249903D00E6296E /* SettingsViewController.swift */,
+				6EE9F0672249904500E6296E /* AnswerViewController.swift */,
 				6EE9F03622498D7700E6296E /* Assets.xcassets */,
 				6EE9F03822498D7700E6296E /* LaunchScreen.storyboard */,
 				6EE9F03B22498D7700E6296E /* Info.plist */,
@@ -256,8 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE9F05E2249902200E6296E /* LoginViewController.swift in Sources */,
+				6EE9F0622249903000E6296E /* ClassFeedViewController.swift in Sources */,
+				6EE9F0662249903D00E6296E /* SettingsViewController.swift in Sources */,
 				6EE9F03222498D7600E6296E /* ViewController.swift in Sources */,
+				6EE9F0682249904500E6296E /* AnswerViewController.swift in Sources */,
+				6EE9F0602249902900E6296E /* ProfileViewController.swift in Sources */,
 				6EE9F03022498D7600E6296E /* AppDelegate.swift in Sources */,
+				6EE9F0642249903600E6296E /* CreateClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
