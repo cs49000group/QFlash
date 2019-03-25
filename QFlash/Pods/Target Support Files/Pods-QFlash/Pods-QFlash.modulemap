@@ -1,6 +1,0 @@
-framework module Pods_QFlash {
-  umbrella header "Pods-QFlash-umbrella.h"
-
-  export *
-  module * { export * }
-}
