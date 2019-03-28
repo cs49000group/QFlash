@@ -2,13 +2,16 @@
 //  LoginViewController.swift
 //  QFlash
 //
-//  Created by Ryan Sullivan on 3/25/19.
+//  Created by Trisha Ghosh  on 3/27/19.
 //  Copyright © 2019 QFlash. All rights reserved.
 //
 
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
