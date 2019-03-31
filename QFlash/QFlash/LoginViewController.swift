@@ -2,13 +2,17 @@
 //  LoginViewController.swift
 //  QFlash
 //
-//  Created by Ryan Sullivan on 3/25/19.
+//  Created by Trisha Ghosh  on 3/27/19.
 //  Copyright © 2019 QFlash. All rights reserved.
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +20,39 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func onSignIn(_ sender: Any) {
+        
+        let username = usernameField.text!
+        let password = passwordField.text!
+        
+        PFUser.logInWithUsername(inBackground: username
+            , password: password)
+        { (user, error ) in
+            if user != nil {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription ))")
+            }
+        }
+        
+    }
+    
+     @IBAction func onSignUp(_ sender: Any) {
+        
+        let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackground { (sucess, error) in
+            if sucess {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription ))")
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
