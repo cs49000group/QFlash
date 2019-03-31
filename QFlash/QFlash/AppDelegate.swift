@@ -24,7 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://obscure-harbor-29188.herokuapp.com/parse"
             })
         )
+        if PFUser.current() != nil { //aka the current user is logged in
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            
+            let profileNavigationController = main.instantiateViewController(withIdentifier: "ProfileNavigationController")
+            
+            window?.rootViewController = profileNavigationController
+            
+        }
         
+        
+
         return true
     }
 
