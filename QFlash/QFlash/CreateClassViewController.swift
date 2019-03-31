@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Parse
 
 class CreateClassViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +18,31 @@ class CreateClassViewController: UIViewController {
     }
     
 
+    func createNewClass(named name: String) {
+        guard let user = PFUser.current() else { return }
+        
+        let newClass = PFObject(className: "Class")
+        newClass["name"] = name
+        newClass["author"] = user
+        user.add(newClass, forKey: "classes")
+        
+        newClass.saveInBackground { (success, error) in
+            if success {
+                print("saved")
+            } else {
+                print("error")
+            }
+        }
+        
+        user.saveInBackground { (success, error) in
+            if success {
+                print("saved")
+            } else {
+                print("error")
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
