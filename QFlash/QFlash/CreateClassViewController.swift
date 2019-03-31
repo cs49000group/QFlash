@@ -11,6 +11,9 @@ import Parse
 
 class CreateClassViewController: UIViewController {
     
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var nameField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +27,12 @@ class CreateClassViewController: UIViewController {
         let newClass = PFObject(className: "Class")
         newClass["name"] = name
         newClass["author"] = user
-        user.add(newClass, forKey: "classes")
+        //user.add(newClass, forKey: "classes")
         
         newClass.saveInBackground { (success, error) in
             if success {
                 print("saved")
+                self.dismiss(animated: true, completion: nil)
             } else {
                 print("error")
             }
@@ -37,9 +41,16 @@ class CreateClassViewController: UIViewController {
         user.saveInBackground { (success, error) in
             if success {
                 print("saved")
+                self.dismiss(animated: true, completion: nil)
             } else {
                 print("error")
             }
+        }
+    }
+    
+    @IBAction func createPressed(_ sender: Any) {
+        if let text = nameField.text {
+            createNewClass(named: text)
         }
     }
     
