@@ -306,7 +306,8 @@ Allows for the user to answer quiz questions in a classroom setting both open en
    - [x] Implement Login and Logout
    - [x] Create a class and store it in the server
     
-    Gif
-        <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone1_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+  ## Milestone 1 Walkthrough
+    
+   <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone1_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
