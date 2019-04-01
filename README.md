@@ -298,4 +298,8 @@ Allows for the user to answer quiz questions in a classroom setting both open en
             }
         }
         ```
+        
+        ##Milestone 1 Gif
+        <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone1_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
