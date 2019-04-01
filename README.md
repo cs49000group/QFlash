@@ -299,7 +299,8 @@ Allows for the user to answer quiz questions in a classroom setting both open en
         }
         ```
         
-    ##Milestone 1
+        
+ ## Milestone 1
     [x] Build UI Navigation
     [x] Create Parse Server
     [x] Implement Login and Logout
