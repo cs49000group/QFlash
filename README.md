@@ -298,4 +298,16 @@ Allows for the user to answer quiz questions in a classroom setting both open en
             }
         }
         ```
+        
+        
+ ## Milestone 1
+   - [x] Build UI Navigation
+   - [x] Create Parse Server
+   - [x] Implement Login and Logout
+   - [x] Create a class and store it in the server
+    
+  ## Milestone 1 Walkthrough
+    
+   <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone1_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 

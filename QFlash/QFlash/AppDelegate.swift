@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "qq"
+                configuration.applicationId = "QFlash"
                 configuration.server = "https://obscure-harbor-29188.herokuapp.com/parse"
             })
         )
