@@ -45,7 +45,7 @@ class CreateClassViewController: UIViewController {
                 alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 if self.shouldDismiss {
-                self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 } else {
                     self.shouldDismiss = true
                 }

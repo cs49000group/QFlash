@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class ClassFeedViewController: UIViewController {
 
     @IBOutlet weak var classTableView: UITableView!
+    
+    var classes: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +21,9 @@ class ClassFeedViewController: UIViewController {
         // Do any additional setup after loading the view.
         classTableView.delegate = self
         classTableView.dataSource = self
+        
+        // Load classes here
     }
-    
 
     /*
     // MARK: - Navigation
@@ -51,12 +55,18 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let joinClassController = storyboard.instantiateViewController(withIdentifier: "Join Popover")
+            if let joinController = joinClassController as? JoinClassViewController {
+                joinController.delegate = self
+            }
+            
             joinClassController.modalPresentationStyle = .popover
             joinClassController.preferredContentSize = CGSize(width: 300, height: 100)
             
-            if let popoverController = joinClassController.popoverPresentationController, let joinClassPopover = joinClassController as? UIPopoverPresentationControllerDelegate {
+            if let popoverController = joinClassController.popoverPresentationController,
+                let joinClassPopover = joinClassController as? UIPopoverPresentationControllerDelegate {
                 popoverController.delegate = joinClassPopover
                 popoverController.backgroundColor = .white
+                
                 if let joinCell = tableView.cellForRow(at: indexPath) as? JoinClassTableViewCell {
                     popoverController.sourceView =  joinCell.joinLabel
                     let frame = joinCell.joinLabel.frame
@@ -66,6 +76,16 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
                 popoverController.permittedArrowDirections = .up
                 present(joinClassController, animated: true, completion: nil)
             }
+        } else {
+            // Add code for selecting a class here
+            
         }
+    }
+}
+
+extension ClassFeedViewController: JoinClassViewControllerDelegate {
+    func didJoinClasss(_ newClass: PFObject) {
+        classes.append(newClass)
+        classTableView.reloadData()
     }
 }

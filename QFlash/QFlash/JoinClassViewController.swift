@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Parse
+
+protocol JoinClassViewControllerDelegate {
+    func didJoinClasss(_ newClass: PFObject)
+}
 
 class JoinClassViewController: UIViewController {
 
     @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var joinButton: UIButton!
+    
+    var delegate: JoinClassViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,7 @@ class JoinClassViewController: UIViewController {
         joinButton.backgroundColor = view.tintColor
         joinButton.setTitleColor(.white, for: .normal)
         joinButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        // Do any additional setup after loading the view.
+        
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -30,6 +37,28 @@ class JoinClassViewController: UIViewController {
     
     @IBAction func joinPressed(_ sender: Any) {
         // Join class
+        guard let text = classTextField.text,
+        let user = PFUser.current() else { return }
+        
+        let query = PFQuery(className: "Class")
+        query.whereKey("hash", equalTo: text)
+        query.findObjectsInBackground { (objects, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                let alertController = UIAlertController(title: "Could not join class",
+                                                        message: "Your class code may be invalid. Check it and try again.",
+                    preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                if let delegate = self.delegate,
+                    let joinedClass = objects?.first {
+                    delegate.didJoinClasss(joinedClass)
+                }
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
 
 }
