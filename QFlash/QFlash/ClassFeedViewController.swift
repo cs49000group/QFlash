@@ -10,10 +10,14 @@ import UIKit
 
 class ClassFeedViewController: UIViewController {
 
+    @IBOutlet weak var classTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        classTableView.delegate = self
+        classTableView.dataSource = self
     }
     
 
@@ -27,4 +31,41 @@ class ClassFeedViewController: UIViewController {
     }
     */
 
+}
+
+extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "Join Cell") as? JoinClassTableViewCell {
+                return cell
+            }
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let joinClassController = storyboard.instantiateViewController(withIdentifier: "Join Popover")
+            joinClassController.modalPresentationStyle = .popover
+            joinClassController.preferredContentSize = CGSize(width: 300, height: 100)
+            
+            if let popoverController = joinClassController.popoverPresentationController, let joinClassPopover = joinClassController as? UIPopoverPresentationControllerDelegate {
+                popoverController.delegate = joinClassPopover
+                popoverController.backgroundColor = .white
+                if let joinCell = tableView.cellForRow(at: indexPath) as? JoinClassTableViewCell {
+                    popoverController.sourceView =  joinCell.joinLabel
+                    let frame = joinCell.joinLabel.frame
+                    popoverController.sourceRect = CGRect(x: (frame.width / 2), y: frame.height, width: 1, height: 1)
+                }
+
+                popoverController.permittedArrowDirections = .up
+                present(joinClassController, animated: true, completion: nil)
+            }
+        }
+    }
 }

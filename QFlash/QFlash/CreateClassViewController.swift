@@ -14,6 +14,8 @@ class CreateClassViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     
+    var shouldDismiss = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,11 @@ class CreateClassViewController: UIViewController {
         newClass.saveInBackground { (success, error) in
             if success {
                 print("saved")
-                self.dismiss(animated: true, completion: nil)
+                if self.shouldDismiss {
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self.shouldDismiss = true
+                }
             } else {
                 print("error")
             }
@@ -41,7 +47,11 @@ class CreateClassViewController: UIViewController {
         user.saveInBackground { (success, error) in
             if success {
                 print("saved")
-                self.dismiss(animated: true, completion: nil)
+                if self.shouldDismiss {
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self.shouldDismiss = true
+                }
             } else {
                 print("error")
             }
