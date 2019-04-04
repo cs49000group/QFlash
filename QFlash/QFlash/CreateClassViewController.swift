@@ -29,13 +29,23 @@ class CreateClassViewController: UIViewController {
         let newClass = PFObject(className: "Class")
         newClass["name"] = name
         newClass["author"] = user
+        
+        let hashString = "\(abs(Date().hashValue))"
+        let hash = String(hashString.prefix(7))
+        newClass["hash"] = hash
+        
         //user.add(newClass, forKey: "classes")
         
         newClass.saveInBackground { (success, error) in
             if success {
                 print("saved")
+                let alertController = UIAlertController(title: "Class Created Successfully!",
+                                              message: "Your class code is \(hash)",
+                                              preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
                 if self.shouldDismiss {
-                    self.navigationController?.popToRootViewController(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
                 } else {
                     self.shouldDismiss = true
                 }
