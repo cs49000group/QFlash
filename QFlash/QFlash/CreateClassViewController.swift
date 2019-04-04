@@ -50,7 +50,7 @@ class CreateClassViewController: UIViewController {
                     self.shouldDismiss = true
                 }
             } else {
-                print("error")
+                print(error?.localizedDescription)
             }
         }
         

@@ -37,9 +37,8 @@ class JoinClassViewController: UIViewController {
     
     @IBAction func joinPressed(_ sender: Any) {
         // Join class
-        guard let text = classTextField.text,
-        let user = PFUser.current() else { return }
-        
+        guard let text = classTextField.text else { return }
+            
         let query = PFQuery(className: "Class")
         query.whereKey("hash", equalTo: text)
         query.findObjectsInBackground { (objects, error) in
@@ -51,14 +50,34 @@ class JoinClassViewController: UIViewController {
                 alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
             } else {
-                if let delegate = self.delegate,
-                    let joinedClass = objects?.first {
-                    delegate.didJoinClasss(joinedClass)
+                if let joinedClass = objects?.first {
+                    self.addCurrentUserToClass(joinedClass)
+                    
+                    if let delegate = self.delegate {
+                        delegate.didJoinClasss(joinedClass)
+                    }
                 }
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    func addCurrentUserToClass(_ joinedClass: PFObject) {
+        guard let user = PFUser.current() else { return }
+
+        user.addUniqueObject(joinedClass, forKey: "classes")
+        user.saveInBackground(block: { (success, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
         
+        joinedClass.addUniqueObject(user, forKey: "students")
+        joinedClass.saveInBackground(block: { (success, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
     }
 
 }
