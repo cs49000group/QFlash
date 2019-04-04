@@ -42,13 +42,13 @@ class CreateClassViewController: UIViewController {
                 let alertController = UIAlertController(title: "Class Created Successfully!",
                                               message: "Your class code is \(hash)",
                                               preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: { (action) in
+                    if action.style == .cancel {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                }))
+
                 self.present(alertController, animated: true, completion: nil)
-                if self.shouldDismiss {
-                    self.navigationController?.popToRootViewController(animated: true)
-                } else {
-                    self.shouldDismiss = true
-                }
             } else {
                 print(error?.localizedDescription)
             }
