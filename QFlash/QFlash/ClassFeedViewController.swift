@@ -24,6 +24,8 @@ class ClassFeedViewController: UIViewController {
         
         // Load classes here
     }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -49,20 +51,26 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
          // collect classes for currect user
-         let user = PFUser.current()
-         let classes = (user?["classes"] as? [PFObject]) ?? []
+        let user = PFUser.current()
+        let classes = (user!["classes"] as? [PFObject]) ?? []
         
+        //var classes = user!["classes"]
+        
+    
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Join Cell") as? JoinClassTableViewCell {
                 return cell
             }
-        }else if (indexPath.row <= classes.count) {
+        } else if (indexPath.row <= classes.count) {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell") as! ClassCell
             
             //populate tableview
-            let classJoined = classes[indexPath.row - 1]
+            let classJoined = classes[indexPath.row]
+            
+    
             cell.classLabel.text = classJoined["name"] as? String
+            
             cell.authorLabel.text = classJoined["author"] as! String
     
             
