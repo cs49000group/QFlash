@@ -16,6 +16,7 @@ class CreateQuizViewController: UIViewController {
     @IBOutlet weak var twoField: UITextField!
     @IBOutlet weak var threeField: UITextField!
     @IBOutlet weak var fourField: UITextField!
+    @IBOutlet weak var titleField: UITextField!
     
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class CreateQuizViewController: UIViewController {
         
         let newQuiz = PFObject(className: "Quiz")
         newQuiz["question"] = questionField.text
+        newQuiz["title"] = titleField.text
         newQuiz["answer1"] = oneField.text
         newQuiz["answer2"] = twoField.text
         newQuiz["answer3"] = threeField.text
@@ -40,6 +42,7 @@ class CreateQuizViewController: UIViewController {
         newQuiz.saveInBackground { (success, error) in
             if(success){
                 print("success")
+                self.dismiss(animated: true, completion: nil)
                 //self.navigationController?.popToRootViewController(animated: true)
             }
             else{
@@ -47,14 +50,6 @@ class CreateQuizViewController: UIViewController {
             }
         }
         
-        user.saveInBackground { (success, error) in
-            if success {
-                print("saved")
-                self.navigationController?.popToRootViewController(animated: true)
-            } else {
-                print("error")
-            }
-        }
     }
     
     /*

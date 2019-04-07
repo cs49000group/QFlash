@@ -7,13 +7,41 @@
 //
 
 import UIKit
+import Parse
 
 class QuizFeedViewController: UIViewController {
+    
+    @IBOutlet weak var QuizTableView: UITableView!
+    var quizzes: [PFObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        QuizTableView.delegate = self
+        QuizTableView.dataSource = self
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        quizzes.removeAll()
+        
+        let query = PFQuery(className: "Quiz")
+        query.includeKey("title")
+        query.limit = 100
+        query.findObjectsInBackground { (newQuizzes, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else{
+                if let  quizzes = newQuizzes {
+                    self.quizzes.append(contentsOf: quizzes)
+                    self.QuizTableView.reloadData()
+                }
+            }
+        }
     }
     
 
@@ -26,5 +54,25 @@ class QuizFeedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+    extension QuizFeedViewController: UITableViewDelegate, UITableViewDataSource {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return quizzes.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            if (indexPath.row <= quizzes.count) {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell") as! QuizCell
+                
+                let quizName = quizzes[indexPath.row]
+                cell.cellQuiz = quizName
+                
+                return cell
+                
+            }
+            return UITableViewCell()
+        }
+    }
+
+

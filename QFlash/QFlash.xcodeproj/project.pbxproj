@@ -26,6 +26,7 @@
 		81BB3AF5224C6797004EAFA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB3AF4224C6797004EAFA6 /* LoginViewController.swift */; };
 		8EFD572EEC87058CDDD93279 /* Pods_QFlash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AD1A8857B0054EE9187CA0 /* Pods_QFlash.framework */; };
 		D6425C012259A44E00B0CD28 /* CreateQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6425C002259A44E00B0CD28 /* CreateQuizViewController.swift */; };
+		D6425C03225ABAA100B0CD28 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6425C02225ABAA100B0CD28 /* QuizCell.swift */; };
 		D6A2F94E224C319D004EFB0D /* QuizFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A2F94D224C319D004EFB0D /* QuizFeedViewController.swift */; };
 		DB6789302D2A459631B3255B /* Pods_QFlashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1BCD7B30AECE60BB1D755E /* Pods_QFlashUITests.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		815C319722515D5100C2A20D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81BB3AF4224C6797004EAFA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6425C002259A44E00B0CD28 /* CreateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizViewController.swift; sourceTree = "<group>"; };
+		D6425C02225ABAA100B0CD28 /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 		D6A2F94D224C319D004EFB0D /* QuizFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFeedViewController.swift; sourceTree = "<group>"; };
 		F9936A7FFDBF855A106E8DB3 /* Pods-QFlashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFlashUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QFlashUITests/Pods-QFlashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 				D6A2F94D224C319D004EFB0D /* QuizFeedViewController.swift */,
 				D6425C002259A44E00B0CD28 /* CreateQuizViewController.swift */,
 				813AC9BC225A5562005DA272 /* ClassCell.swift */,
+				D6425C02225ABAA100B0CD28 /* QuizCell.swift */,
 			);
 			path = QFlash;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				81BB3AF5224C6797004EAFA6 /* LoginViewController.swift in Sources */,
 				6ECC91A32249918E00AE857D /* AnswerViewController.swift in Sources */,
 				815C319822515D5100C2A20D /* ProfileViewController.swift in Sources */,
+				D6425C03225ABAA100B0CD28 /* QuizCell.swift in Sources */,
 				6ECC91A42249918E00AE857D /* SettingsViewController.swift in Sources */,
 				6ECC91A72249933200AE857D /* MainTabBarController.swift in Sources */,
 				D6425C012259A44E00B0CD28 /* CreateQuizViewController.swift in Sources */,
