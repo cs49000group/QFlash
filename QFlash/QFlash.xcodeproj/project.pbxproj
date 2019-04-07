@@ -21,6 +21,7 @@
 		6EE9F03A22498D7700E6296E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE9F03822498D7700E6296E /* LaunchScreen.storyboard */; };
 		6EE9F04522498D7700E6296E /* QFlashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F04422498D7700E6296E /* QFlashTests.swift */; };
 		6EE9F05022498D7700E6296E /* QFlashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9F04F22498D7700E6296E /* QFlashUITests.swift */; };
+		813AC9BD225A5562005DA272 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AC9BC225A5562005DA272 /* ClassCell.swift */; };
 		815C319822515D5100C2A20D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C319722515D5100C2A20D /* ProfileViewController.swift */; };
 		81BB3AF5224C6797004EAFA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB3AF4224C6797004EAFA6 /* LoginViewController.swift */; };
 		8EFD572EEC87058CDDD93279 /* Pods_QFlash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AD1A8857B0054EE9187CA0 /* Pods_QFlash.framework */; };
@@ -74,6 +75,7 @@
 		6EE9F04F22498D7700E6296E /* QFlashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFlashUITests.swift; sourceTree = "<group>"; };
 		6EE9F05122498D7700E6296E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78BC66527920A34F1ABA37C4 /* Pods_QFlashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QFlashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		813AC9BC225A5562005DA272 /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		815C319722515D5100C2A20D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81BB3AF4224C6797004EAFA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6425C002259A44E00B0CD28 /* CreateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				6EE9F03B22498D7700E6296E /* Info.plist */,
 				D6A2F94D224C319D004EFB0D /* QuizFeedViewController.swift */,
 				D6425C002259A44E00B0CD28 /* CreateQuizViewController.swift */,
+				813AC9BC225A5562005DA272 /* ClassCell.swift */,
 			);
 			path = QFlash;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813AC9BD225A5562005DA272 /* ClassCell.swift in Sources */,
 				81BB3AF5224C6797004EAFA6 /* LoginViewController.swift in Sources */,
 				6ECC91A32249918E00AE857D /* AnswerViewController.swift in Sources */,
 				815C319822515D5100C2A20D /* ProfileViewController.swift in Sources */,
