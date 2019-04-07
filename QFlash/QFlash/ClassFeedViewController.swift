@@ -47,6 +47,17 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Join Cell") as? JoinClassTableViewCell {
                 return cell
             }
+        }else if (indexPath.row <= classes.count) {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell") as! ClassCell
+            
+            let className = classes[indexPath.row - 1]
+            cell.classLabel.text = className["name"] as! String
+            cell.authorLabel.text = className["author"] as! String
+            
+            
+            return cell
+            
         }
         return UITableViewCell()
     }
