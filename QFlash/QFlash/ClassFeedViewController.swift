@@ -42,7 +42,16 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return classes.count + 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+         // collect classes for currect user
+         let user = PFUser.current()
+         let classes = (user?["classes"] as? [PFObject]) ?? []
+        
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Join Cell") as? JoinClassTableViewCell {
                 return cell
@@ -51,10 +60,11 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell") as! ClassCell
             
-            let className = classes[indexPath.row - 1]
-            cell.classLabel.text = className["name"] as! String
-            cell.authorLabel.text = className["author"] as! String
-            
+            //populate tableview
+            let classJoined = classes[indexPath.row - 1]
+            cell.classLabel.text = classJoined["name"] as? String
+            cell.authorLabel.text = classJoined["author"] as! String
+    
             
             return cell
             
@@ -89,6 +99,7 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             // Add code for selecting a class here
+            
             
         }
     }
