@@ -177,6 +177,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="joinLabel" destination="zGu-Vl-IP1" id="EeH-i6-GCo"/>
+                                            <segue destination="hq5-0G-hxb" kind="presentation" id="w3d-1b-0Nf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCell" rowHeight="128" id="fc1-lf-d0n" customClass="ClassCell" customModule="QFlash" customModuleProvider="target">
@@ -206,6 +207,9 @@
                                                 <outlet property="classLabel" destination="cNN-FM-FAN" id="Q8Z-Er-TvJ"/>
                                             </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cm2-7S-lXV" kind="presentation" id="4AA-hm-uLr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
