@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 protocol JoinClassViewControllerDelegate {
-    func didJoinClasss(_ newClass: PFObject)
+    func didJoinClass(_ newClass: PFObject)
 }
 
 class JoinClassViewController: UIViewController {
@@ -75,7 +75,7 @@ class JoinClassViewController: UIViewController {
             }
             else {
                 if let delegate = self.delegate {
-                    delegate.didJoinClasss(joinedClass)
+                    delegate.didJoinClass(joinedClass)
                 }
             }
         })

@@ -23,6 +23,20 @@ class ClassFeedViewController: UIViewController {
         classTableView.dataSource = self
         
         // Load classes here
+        let query = PFQuery(className:"Class")
+        query.whereKey("students", containsAllObjectsIn: [PFUser.current()!])
+        query.order(byDescending: "createdAt")
+        query.findObjectsInBackground { (newClasses, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else {
+                if let classes = newClasses {
+                    self.classes.append(contentsOf: classes)
+                    self.classTableView.reloadData()
+                }
+            }
+        }
     }
 
     /*
@@ -93,7 +107,7 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ClassFeedViewController: JoinClassViewControllerDelegate {
-    func didJoinClasss(_ newClass: PFObject) {
+    func didJoinClass(_ newClass: PFObject) {
         classes.append(newClass)
         classTableView.reloadData()
     }
