@@ -16,7 +16,14 @@ class ClassCell: UITableViewCell {
     
     var cellClass: PFObject? {
         didSet{
-            setupCell()
+            cellClass?.fetchIfNeededInBackground(block: { (updatedClass, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                else {
+                    self.setupCell()
+                }
+            })
         }
     }
     
@@ -28,6 +35,17 @@ class ClassCell: UITableViewCell {
     func setupCell() {
         guard let cellClass = cellClass else { return }
         nameLabel.text = cellClass["name"] as! String
+        if let author = cellClass["author"] as? PFUser {
+            author.fetchIfNeededInBackground { (object, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    if let user = object as? PFUser {
+                        self.authorLabel.text = user.username as! String
+                    }
+                }
+            }
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

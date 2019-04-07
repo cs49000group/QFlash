@@ -75,6 +75,7 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let joinClassController = storyboard.instantiateViewController(withIdentifier: "Join Popover")
@@ -108,7 +109,12 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ClassFeedViewController: JoinClassViewControllerDelegate {
     func didJoinClass(_ newClass: PFObject) {
-        classes.append(newClass)
-        classTableView.reloadData()
+        let isNewClass = !classes.contains { (currentClass) -> Bool in
+            return currentClass["hash"] as! String == newClass["hash"] as! String
+        }
+        if isNewClass {
+            classes.append(newClass)
+            classTableView.reloadData()
+        }
     }
 }
