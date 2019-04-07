@@ -52,10 +52,6 @@ class JoinClassViewController: UIViewController {
             } else {
                 if let joinedClass = objects?.first {
                     self.addCurrentUserToClass(joinedClass)
-                    
-                    if let delegate = self.delegate {
-                        delegate.didJoinClasss(joinedClass)
-                    }
                 }
                 self.dismiss(animated: true, completion: nil)
             }
@@ -76,6 +72,11 @@ class JoinClassViewController: UIViewController {
         joinedClass.saveInBackground(block: { (success, error) in
             if let error = error {
                 print(error.localizedDescription)
+            }
+            else {
+                if let delegate = self.delegate {
+                    delegate.didJoinClasss(joinedClass)
+                }
             }
         })
     }

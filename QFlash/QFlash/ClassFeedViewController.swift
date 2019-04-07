@@ -39,7 +39,7 @@ class ClassFeedViewController: UIViewController {
 
 extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1 + classes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,14 +47,12 @@ extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Join Cell") as? JoinClassTableViewCell {
                 return cell
             }
-        }else if (indexPath.row <= classes.count) {
+        } else if (indexPath.row <= classes.count) {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell") as! ClassCell
             
             let className = classes[indexPath.row - 1]
-            cell.classLabel.text = className["name"] as! String
-            cell.authorLabel.text = className["author"] as! String
-            
+            cell.cellClass = className
             
             return cell
             

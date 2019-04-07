@@ -7,16 +7,29 @@
 //
 
 import UIKit
+import Parse
 
 class ClassCell: UITableViewCell {
 
-    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    
+    var cellClass: PFObject? {
+        didSet{
+            setupCell()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setupCell() {
+        guard let cellClass = cellClass else { return }
+        nameLabel.text = cellClass["name"] as! String
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
