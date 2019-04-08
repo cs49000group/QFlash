@@ -309,5 +309,13 @@ Allows for the user to answer quiz questions in a classroom setting both open en
   ## Milestone 1 Walkthrough
     
    <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone1_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+   
+  ## Milestone 2
+  - [x] Join Class
+  - [x] Display Classes in table view
+  - [x] Create Quiz
+  - [x] Display Quizzes in table view
+ 
+ ## Milestone 2 Walkthrough
+ <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone2_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
