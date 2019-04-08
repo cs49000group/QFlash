@@ -43,6 +43,7 @@ class ClassFeedViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // Load classes here
+        classes.removeAll()
         let query = PFQuery(className:"Class")
         query.limit = 100
         query.whereKey("students", containsAllObjectsIn: [PFUser.current()!])
