@@ -12,6 +12,11 @@ import Parse
 class QuizFeedViewController: UIViewController {
     
     @IBOutlet weak var QuizTableView: UITableView!
+    var quizClass: PFObject? {
+        didSet {
+            // update using class information
+        }
+    }
     var quizzes: [PFObject] = []
 
     override func viewDidLoad() {

@@ -23,27 +23,6 @@ class ClassFeedViewController: UIViewController {
         classTableView.dataSource = self
         
         // Load classes here
-        /*let query = PFQuery(className:"Class")
-        query.whereKey("students", containsAllObjectsIn: [PFUser.current()!])
-        query.order(byDescending: "createdAt")
-        query.findObjectsInBackground { (newClasses, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            else {
-                if let classes = newClasses {
-                    self.classes.append(contentsOf: classes)
-                    self.classTableView.reloadData()
-                }
-            }
-        }*/
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // Load classes here
-        classes.removeAll()
         let query = PFQuery(className:"Class")
         query.limit = 100
         query.whereKey("students", containsAllObjectsIn: [PFUser.current()!])
@@ -59,19 +38,19 @@ class ClassFeedViewController: UIViewController {
                 }
             }
         }
-
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }*/
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Quiz Segue" {
+            if let navigationController = segue.destination as? UINavigationController,
+                let destination = navigationController.topViewController as? QuizFeedViewController,
+                let indexPath = classTableView.indexPathForSelectedRow,
+                let cell = classTableView.cellForRow(at: indexPath) as? ClassCell {
 
+                destination.quizClass = cell.cellClass
+            }
+        }
+    }
 }
 
 extension ClassFeedViewController: UITableViewDelegate, UITableViewDataSource {

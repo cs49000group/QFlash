@@ -219,7 +219,7 @@
                                         <connections>
                                             <outlet property="authorLabel" destination="jSD-jc-JYN" id="c8g-DU-7SQ"/>
                                             <outlet property="nameLabel" destination="cNN-FM-FAN" id="jEs-AT-ByU"/>
-                                            <segue destination="cm2-7S-lXV" kind="presentation" id="4AA-hm-uLr"/>
+                                            <segue destination="cm2-7S-lXV" kind="presentation" identifier="Quiz Segue" id="4AA-hm-uLr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

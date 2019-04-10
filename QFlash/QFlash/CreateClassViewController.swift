@@ -21,7 +21,6 @@ class CreateClassViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
     func createNewClass(named name: String) {
         guard let user = PFUser.current() else { return }
