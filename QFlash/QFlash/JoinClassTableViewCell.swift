@@ -14,7 +14,7 @@ class JoinClassTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        joinLabel.textColor = self.contentView.tintColor
+        joinLabel.textColor = .gray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
