@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class CreateQuizViewController: UIViewController {
+    
+    var quizClass: PFObject?
 
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var oneField: UITextField!

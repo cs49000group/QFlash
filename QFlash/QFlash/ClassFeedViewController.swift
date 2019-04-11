@@ -46,7 +46,7 @@ class ClassFeedViewController: UIViewController {
                 let destination = navigationController.topViewController as? QuizFeedViewController,
                 let indexPath = classTableView.indexPathForSelectedRow,
                 let cell = classTableView.cellForRow(at: indexPath) as? ClassCell {
-
+                print("sent")
                 destination.quizClass = cell.cellClass
             }
         }

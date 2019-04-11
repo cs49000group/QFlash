@@ -445,7 +445,7 @@
                     <navigationItem key="navigationItem" id="xRr-Yv-y36">
                         <barButtonItem key="rightBarButtonItem" title="Create Quiz" id="63I-NS-p90">
                             <connections>
-                                <segue destination="fjI-ug-Hz2" kind="showDetail" id="yj4-ef-yLA"/>
+                                <segue destination="fjI-ug-Hz2" kind="showDetail" identifier="CreateQuiz Segue" id="yj4-ef-yLA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
