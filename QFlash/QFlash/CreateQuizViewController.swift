@@ -39,6 +39,8 @@ class CreateQuizViewController: UIViewController {
         newQuiz["answer4"] = fourField.text
         newQuiz["author"] = user
         
+        var quiz:Quiz = Quiz(title: titleField.text!, question: questionField.text!, answer1: oneField.text!, answer2: twoField.text!, answer3: threeField.text!, answer4: fourField.text!)
+        
         //user.add(newClass, forKey: "classes")
         
         newQuiz.saveInBackground { (success, error) in
@@ -64,4 +66,22 @@ class CreateQuizViewController: UIViewController {
     }
     */
 
+}
+
+public class Quiz{
+    var title: String
+    var question: String
+    var answer1: String
+    var answer2: String
+    var answer3: String
+    var answer4: String
+    
+    init(title: String, question: String, answer1: String, answer2: String, answer3: String, answer4: String){
+        self.title = title
+        self.question = question
+        self.answer1 = answer1
+        self.answer2 = answer2
+        self.answer3 = answer3
+        self.answer4 = answer4
+    }
 }
