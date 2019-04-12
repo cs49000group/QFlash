@@ -428,6 +428,7 @@
                                         <color key="backgroundColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="titleLabel" destination="irJ-Cp-zDQ" id="dY0-6W-CWc"/>
+                                            <segue destination="kMY-wW-9qk" kind="presentation" identifier="QuizScreen Segue" id="rtK-bN-s6n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -456,6 +457,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt6-xl-pH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="3997.1514242878566"/>
+        </scene>
+        <!--Quiz Screen View Controller-->
+        <scene sceneID="G7d-JB-lwv">
+            <objects>
+                <viewController id="kWa-GF-dmz" customClass="QuizScreenViewController" customModule="QFlash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7m-Ub-bOb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="kKx-ys-FrT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WEZ-zh-crm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LM-p0-ruo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.2" y="4700.5997001499254"/>
         </scene>
         <!--Profile-->
         <scene sceneID="xek-3c-fys">
@@ -591,6 +608,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woA-7a-5Fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="3259.5202398800602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yak-QV-viz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kMY-wW-9qk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x8a-kh-Ov4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kWa-GF-dmz" kind="relationship" relationship="rootViewController" id="FVT-x7-HG3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmQ-5B-QgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="4700.5997001499254"/>
         </scene>
     </scenes>
 </document>

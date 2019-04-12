@@ -12,7 +12,7 @@ import Parse
 class QuizFeedViewController: UIViewController {
     
     @IBOutlet weak var QuizTableView: UITableView!
-    var quizClass: PFObject? {
+    var quizClass:  PFObject! {
         didSet {
             // update using class information
         }
@@ -42,8 +42,18 @@ class QuizFeedViewController: UIViewController {
             }
             else{
                 if let  quizzes = newQuizzes {
-                    self.quizzes.append(contentsOf: quizzes)
-                    self.QuizTableView.reloadData()
+                    for quiz in quizzes{
+                        if(quiz.object(forKey: "class") != nil){
+                            var s1: String
+                            var s2: String
+                            s1 = quiz.object(forKey: "class") as! String
+                            s2 = self.quizClass.object(forKey: "name") as! String
+                            if(s1 == s2){
+                                self.quizzes.append(quiz)
+                                self.QuizTableView.reloadData()
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -60,6 +70,16 @@ class QuizFeedViewController: UIViewController {
         if segue.identifier == "CreateQuiz Segue" {
             let destination = segue.destination as? CreateQuizViewController
             destination!.quizClass = self.quizClass
+        }
+        
+        if segue.identifier == "QuizScreen Segue" {
+            if let navigationController = segue.destination as? UINavigationController,
+                let destination = navigationController.topViewController as? QuizScreenViewController,
+                let indexPath = QuizTableView.indexPathForSelectedRow,
+                let cell = QuizTableView.cellForRow(at: indexPath) as? QuizCell {
+                print("sent2")
+                destination.quiz = cell.cellQuiz
+            }
         }
 
     }
