@@ -114,6 +114,8 @@ class QuizScreenViewController: UIViewController {
         stuAnswer.saveInBackground { (sucess, error) in
             if (sucess) {
                 print("saved!")
+                //self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
             } else {
                 print("error!")
             }
