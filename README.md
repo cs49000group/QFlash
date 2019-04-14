@@ -318,4 +318,12 @@ Allows for the user to answer quiz questions in a classroom setting both open en
  
  ## Milestone 2 Walkthrough
  <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone2_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ 
+ ## Milestone 3
+ - [x] Open Quiz in App
+ - [x] Take Quiz in App
+ - [x] Sort Quizzes by class
+
+## Milestone 3 Walkthrough
+ <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone3_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
