@@ -108,8 +108,8 @@ class QuizScreenViewController: UIViewController {
         stuAnswer["title"] = titleLabel.text!
         stuAnswer["question"] = questionLabel.text!
         stuAnswer["student"] = PFUser.current()!
-        stuAnswer["answer(s)"] = answer
-        
+        stuAnswer["answer"] = answer as String
+    
         
         stuAnswer.saveInBackground { (sucess, error) in
             if (sucess) {
