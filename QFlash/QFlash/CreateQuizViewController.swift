@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class CreateQuizViewController: UIViewController {
+    
+    var quizClass: PFObject!
 
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var oneField: UITextField!
@@ -36,6 +38,20 @@ class CreateQuizViewController: UIViewController {
         newQuiz["answer3"] = threeField.text
         newQuiz["answer4"] = fourField.text
         newQuiz["author"] = user
+        newQuiz["class"] = quizClass.object(forKey: "name")
+        
+       /* var quiz:Quiz = Quiz(title: titleField.text!, question: questionField.text!, answer1: oneField.text!, answer2: twoField.text!, answer3: threeField.text!, answer4: fourField.text!)
+        
+        quizClass.addUniqueObject(quiz, forKey: "quiz")
+        quizClass.saveInBackground { (success, error) in
+            if(success){
+                self.dismiss(animated: true, completion: nil)
+            }
+            else{
+                print("error")
+            }
+        }*/
+        //print(quizClass?.object(forKey: "quiz"))
         
         //user.add(newClass, forKey: "classes")
         
@@ -62,4 +78,22 @@ class CreateQuizViewController: UIViewController {
     }
     */
 
+}
+
+public class Quiz{
+    var title: String
+    var question: String
+    var answer1: String
+    var answer2: String
+    var answer3: String
+    var answer4: String
+    
+    init(title: String, question: String, answer1: String, answer2: String, answer3: String, answer4: String){
+        self.title = title
+        self.question = question
+        self.answer1 = answer1
+        self.answer2 = answer2
+        self.answer3 = answer3
+        self.answer4 = answer4
+    }
 }
