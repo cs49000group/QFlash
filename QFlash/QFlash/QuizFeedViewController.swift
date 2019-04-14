@@ -73,8 +73,7 @@ class QuizFeedViewController: UIViewController {
         }
         
         if segue.identifier == "QuizScreen Segue" {
-            if let navigationController = segue.destination as? UINavigationController,
-                let destination = navigationController.topViewController as? QuizScreenViewController,
+            if let destination = segue.destination as? QuizScreenViewController,
                 let indexPath = QuizTableView.indexPathForSelectedRow,
                 let cell = QuizTableView.cellForRow(at: indexPath) as? QuizCell {
                 print("sent2")
@@ -102,6 +101,10 @@ class QuizFeedViewController: UIViewController {
                 
             }
             return UITableViewCell()
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "QuizScreen Segue", sender: nil)
         }
     }
 

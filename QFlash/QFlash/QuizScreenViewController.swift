@@ -11,24 +11,97 @@ import Parse
 
 class QuizScreenViewController: UIViewController {
     
-    var quiz: PFObject!
+    var quiz: PFObject! {
+        didSet {
+            quiz.fetchInBackground { (object, error) in
+                self.setupView()
+            }
+        }
+    }
 
+    @IBOutlet weak var multipleChoiceHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var freeResponseHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var freeResponseTextField: UITextField!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var answer1: UILabel!
+    
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var answer2: UILabel!
+    
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var answer3: UILabel!
+    
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var answer4: UILabel!
+    
+    var mcAnswer: String?
+    var isShortAnswer = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(quiz)
-
         // Do any additional setup after loading the view.
     }
     
+    func setupView() {
+        guard let quiz = quiz else { return }
+        titleLabel.text = quiz["title"] as? String
+        questionLabel.text = quiz["question"] as? String
+        if (quiz["answer2"] as! String == "") {
+            // Short answer
+            isShortAnswer = true
+            multipleChoiceHeightConstraint.constant = 0
+            multipleChoiceHeightConstraint.isActive = true
+        } else {
+            freeResponseHeightConstraint.constant = 0
+            freeResponseHeightConstraint.isActive = true
+            answer1.text = quiz["answer1"] as? String
+            answer2.text = quiz["answer2"] as? String
+            answer3.text = quiz["answer3"] as? String
+            answer4.text = quiz["answer4"] as? String
+            setGray()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }
     }
-    */
 
+    @IBAction func answerSelected(_ sender: UIButton) {
+        setGray()
+        if sender == button1 {
+            button1.setTitleColor(view.tintColor, for: .normal)
+            mcAnswer = answer1.text ?? ""
+        } else if sender == button2 {
+            button2.setTitleColor(view.tintColor, for: .normal)
+            mcAnswer = answer2.text ?? ""
+        } else if sender == button3 {
+            button3.setTitleColor(view.tintColor, for: .normal)
+            mcAnswer = answer3.text ?? ""
+        } else if sender == button4 {
+            button4.setTitleColor(view.tintColor, for: .normal)
+            mcAnswer = answer4.text ?? ""
+        }
+    }
+    
+    func setGray() {
+        button1.setTitleColor(.gray, for: .normal)
+        button2.setTitleColor(.gray, for: .normal)
+        button3.setTitleColor(.gray, for: .normal)
+        button4.setTitleColor(.gray, for: .normal)
+    }
+    
+    @IBAction func submitPressed(_ sender: Any) {
+        let answer: String
+        if isShortAnswer {
+            guard let shortAnswer = freeResponseTextField.text else { return }
+            answer = shortAnswer
+        } else {
+            guard let mcAnswer = mcAnswer else { return }
+            answer = mcAnswer
+        }
+        
+        // Trisha upload here:
+    }
 }
