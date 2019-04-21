@@ -109,6 +109,7 @@ class QuizScreenViewController: UIViewController {
         stuAnswer["question"] = questionLabel.text!
         stuAnswer["student"] = PFUser.current()!
         stuAnswer["answer"] = answer as String
+        quiz["answers"] = answer
     
         
         stuAnswer.saveInBackground { (sucess, error) in
@@ -121,4 +122,16 @@ class QuizScreenViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func onViewResults(_ sender: Any) {
+        if PFUser.current() == quiz["author"] as? PFUser {
+            self.performSegue(withIdentifier: "resultSegue", sender: nil)
+            print("user is author of quiz")
+            
+        } else {
+            print("user is not author of quiz")
+        }
+    }
 }
+
