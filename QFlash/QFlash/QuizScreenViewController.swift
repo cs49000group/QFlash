@@ -103,5 +103,22 @@ class QuizScreenViewController: UIViewController {
         }
         
         // Trisha upload here:
+        let stuAnswer = PFObject(className: "Answers")
+        stuAnswer["class"] = quiz["class"]
+        stuAnswer["title"] = titleLabel.text!
+        stuAnswer["question"] = questionLabel.text!
+        stuAnswer["student"] = PFUser.current()!
+        stuAnswer["answer"] = answer as String
+    
+        
+        stuAnswer.saveInBackground { (sucess, error) in
+            if (sucess) {
+                print("saved!")
+                //self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                print("error!")
+            }
+        }
     }
 }
