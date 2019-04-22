@@ -11,8 +11,8 @@ import Parse
 
 class ResultsCell: UITableViewCell {
     
+   
     @IBOutlet weak var studentName: UILabel!
-    
     @IBOutlet weak var answerName: UILabel!
     
     var cellResult: PFObject? {
@@ -22,7 +22,7 @@ class ResultsCell: UITableViewCell {
                     print(error.localizedDescription)
                 }
                 else {
-                    self.setupCell()
+                   self.setupCell()
                 }
             })
         }
@@ -42,8 +42,9 @@ class ResultsCell: UITableViewCell {
     
     func setupCell() {
         guard let cellResult = cellResult else { return }
-        studentName.text = cellResult["student"] as? String
-        answerName.text = cellResult["answer"] as? String
+        print(cellResult["answer"] as! String)
+        studentName.text = cellResult["title"] as! String
+        answerName.text = cellResult["answer"] as! String
     }
 
 }

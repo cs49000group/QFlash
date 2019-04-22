@@ -68,6 +68,11 @@ class CreateQuizViewController: UIViewController {
         
     }
     
+    
+    @IBAction func dismissButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

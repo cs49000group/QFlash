@@ -15,6 +15,7 @@ class ResultsViewController: UIViewController {
     var quiz: PFObject!
     var answers: [PFObject] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,25 +23,31 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        //ResultTableView.delegate = self
-        // QuizTableView.dataSource = self
-        
+        resultsTableView.delegate = self
+        resultsTableView.dataSource = self
+    }
+    
+   override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       answers.removeAll()
         // Load answers here
         let query = PFQuery(className:"Answers")
         query.limit = 100
-        query.whereKey("title", equalTo: quiz["title"])
-        query.whereKey("class", equalTo: quiz["class"])
+       // query.whereKey("title", equalTo: quiz["title"])
+       // query.whereKey("class", equalTo: quiz["class"])
         query.includeKey("answer")
-        query.includeKey("student")
-        query.order(byDescending: "createdAt")
+        //query.includeKey("student")
+        //query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (newAnswers, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
             else {
                 if let answers = newAnswers {
-                    self.answers.append(contentsOf: answers)
-                    self.resultsTableView.reloadData()
+                    for answer in answers{
+                        self.answers.append(answer)
+                        self.resultsTableView.reloadData()
+                    }
             
                 print(" answers loaded")
                 }
@@ -49,6 +56,9 @@ class ResultsViewController: UIViewController {
         }
     }
 
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     
@@ -77,10 +87,10 @@ class ResultsViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell")
                 as! ResultsCell
             
-           let answerName = answers[indexPath.row - 1]
-            cell.cellResult = answerName
+           let answerName = answers[indexPath.row]
+           cell.cellResult = answerName
                 
-                return cell
+            return cell
             
         }
     /*

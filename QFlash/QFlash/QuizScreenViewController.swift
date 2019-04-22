@@ -18,6 +18,7 @@ class QuizScreenViewController: UIViewController {
             }
         }
     }
+    
 
     @IBOutlet weak var multipleChoiceHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var freeResponseHeightConstraint: NSLayoutConstraint!
@@ -122,6 +123,17 @@ class QuizScreenViewController: UIViewController {
             }
         }
     }
+    
+  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "resultSegue" {
+            let destination = segue.destination as? ResultsViewController
+            destination!.question = self.question
+        }
+        
+        
+    }*/
     
     
   /*  @IBAction func onViewResults(_ sender: Any) {
