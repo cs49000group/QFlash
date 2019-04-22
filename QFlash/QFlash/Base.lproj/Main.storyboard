@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -785,6 +785,16 @@
                                     <action selector="submitPressed:" destination="kWa-GF-dmz" eventType="touchUpInside" id="neo-LV-H3O"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csU-qI-93x">
+                                <rect key="frame" x="169" y="516" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Results">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="toS-5y-bss" kind="showDetail" id="ZR2-u3-Epk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -804,18 +814,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kKx-ys-FrT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WEZ-zh-crm">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8LG-BR-iBw">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uyR-ef-snG">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Results"/>
-                            </button>
-                            <connections>
-                                <action selector="onViewResults:" destination="kWa-GF-dmz" id="3zp-tw-tLl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WEZ-zh-crm"/>
                     <connections>
                         <outlet property="answer1" destination="xDy-8H-qRr" id="R7l-Xe-1mE"/>
                         <outlet property="answer2" destination="hpu-SS-3yT" id="8G7-It-oPG"/>
@@ -830,7 +829,6 @@
                         <outlet property="multipleChoiceHeightConstraint" destination="Bez-wK-e0J" id="hnM-Mf-aRk"/>
                         <outlet property="questionLabel" destination="IoB-a6-2Gx" id="vBi-J4-7zX"/>
                         <outlet property="titleLabel" destination="flG-CQ-zM8" id="ntr-xj-ams"/>
-                        <segue destination="toS-5y-bss" kind="presentation" id="t6T-KA-ZQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0LM-p0-ruo" userLabel="First Responder" sceneMemberID="firstResponder"/>

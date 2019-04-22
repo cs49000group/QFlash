@@ -124,7 +124,7 @@ class QuizScreenViewController: UIViewController {
     }
     
     
-    @IBAction func onViewResults(_ sender: Any) {
+  /*  @IBAction func onViewResults(_ sender: Any) {
         if PFUser.current() == quiz["author"] as? PFUser {
             self.performSegue(withIdentifier: "resultSegue", sender: nil)
             print("user is author of quiz")
@@ -132,6 +132,6 @@ class QuizScreenViewController: UIViewController {
         } else {
             print("user is not author of quiz")
         }
-    }
+    }*/
 }
 
