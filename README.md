@@ -336,5 +336,5 @@ Allows for the user to answer quiz questions in a classroom setting both open en
  <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone4_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
  
  ## Final Walkthrough
- <img src='https://github.com/cs49000group/QFlash/blob/master/final_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+ <img src='https://github.com/cs49000group/QFlash/blob/master/Final_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
