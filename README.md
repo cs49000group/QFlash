@@ -332,6 +332,6 @@ Allows for the user to answer quiz questions in a classroom setting both open en
  - [x] profile page
  - [x] results page
  
- ## Milestone 3 Walkthrough
+ ## Milestone 4 Walkthrough
  <img src='https://github.com/cs49000group/QFlash/blob/master/Milestone4_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
