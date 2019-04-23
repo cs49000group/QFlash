@@ -132,7 +132,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nm-iS-JQQ">
                                 <rect key="frame" x="254" y="49" width="30" height="30"/>
-                                <state key="normal" title="Join"/>
+                                <color key="backgroundColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleColor" red="0.90058493610000001" green="0.92534869909999995" blue="0.92823833229999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="joinPressed:" destination="hq5-0G-hxb" eventType="touchUpInside" id="7zE-Z6-6bA"/>
                                 </connections>
@@ -597,7 +600,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create Quiz" id="63I-NS-p90">
                             <connections>
-                                <segue destination="fjI-ug-Hz2" kind="showDetail" identifier="CreateQuiz Segue" id="yj4-ef-yLA"/>
+                                <segue destination="fjI-ug-Hz2" kind="show" identifier="CreateQuiz Segue" id="yj4-ef-yLA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -996,37 +999,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5h-fg-vzf">
-                                <rect key="frame" x="37.5" y="172" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="216" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-FG-bv8">
-                                <rect key="frame" x="37.5" y="218" width="66" height="21"/>
+                                <rect key="frame" x="37.5" y="262" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-6w-eNT">
-                                <rect key="frame" x="37.5" y="247" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="291" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MwL-Ek-Ju4">
-                                <rect key="frame" x="37.5" y="339" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="383" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUn-J3-qPM">
-                                <rect key="frame" x="37.5" y="385" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="429" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-sx-qmO">
-                                <rect key="frame" x="37.5" y="447" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="491" width="300" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Create">
                                     <color key="titleColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1036,31 +1039,31 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADD-xv-pEE">
-                                <rect key="frame" x="37.5" y="293" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="337" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11P-HZ-O4c">
-                                <rect key="frame" x="37.5" y="68" width="34" height="21"/>
+                                <rect key="frame" x="37.5" y="112" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gc0-d0-51x">
-                                <rect key="frame" x="37.5" y="97" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="141" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-Ry-x5b">
-                                <rect key="frame" x="37.5" y="143" width="108" height="21"/>
+                                <rect key="frame" x="37.5" y="187" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-Us-LDO">
-                                <rect key="frame" x="37.5" y="493" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="537" width="300" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

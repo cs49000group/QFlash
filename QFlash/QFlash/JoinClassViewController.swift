@@ -25,8 +25,6 @@ class JoinClassViewController: UIViewController {
         classTextField.delegate = self
         joinButton.layer.cornerRadius = 4
         joinButton.clipsToBounds = true
-        joinButton.backgroundColor = view.tintColor
-        joinButton.setTitleColor(.white, for: .normal)
         joinButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         
     }
