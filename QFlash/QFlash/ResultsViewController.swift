@@ -14,46 +14,44 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultsTableView: UITableView!
     var quiz: PFObject!
     var answers: [PFObject] = []
-    
+    var question: String? {
+        didSet {
+            // Load answers here
+            let query = PFQuery(className:"Answers")
+            query.limit = 100
+            // query.whereKey("title", equalTo: quiz["title"])
+            // query.whereKey("class", equalTo: quiz["class"])
+            query.includeKey("answer")
+            //query.includeKey("student")
+            //query.order(byDescending: "createdAt")
+            query.findObjectsInBackground { (newAnswers, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                else {
+                    if let answers = newAnswers {
+                        for answer in answers{
+                            if let question = answer["question"] as? String, question == self.question {
+                                self.answers.append(answer)
+                                self.resultsTableView.reloadData()
+                            }
+                        }
+                        
+                        print(" answers loaded")
+                    }
+                    
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         // Do any additional setup after loading the view.
-        
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
-    }
-    
-   override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       answers.removeAll()
-        // Load answers here
-        let query = PFQuery(className:"Answers")
-        query.limit = 100
-       // query.whereKey("title", equalTo: quiz["title"])
-       // query.whereKey("class", equalTo: quiz["class"])
-        query.includeKey("answer")
-        //query.includeKey("student")
-        //query.order(byDescending: "createdAt")
-        query.findObjectsInBackground { (newAnswers, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            else {
-                if let answers = newAnswers {
-                    for answer in answers{
-                        self.answers.append(answer)
-                        self.resultsTableView.reloadData()
-                    }
-            
-                print(" answers loaded")
-                }
-                
-            }
-        }
     }
 
     @IBAction func backButton(_ sender: Any) {

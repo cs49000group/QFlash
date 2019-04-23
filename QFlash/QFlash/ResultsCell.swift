@@ -43,7 +43,15 @@ class ResultsCell: UITableViewCell {
     func setupCell() {
         guard let cellResult = cellResult else { return }
         print(cellResult["answer"] as! String)
-        studentName.text = cellResult["title"] as! String
+        if let student = cellResult["student"] as? PFUser {
+            student.fetchIfNeededInBackground { (object, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    self.studentName.text = student.username
+                }
+            }
+        }
         answerName.text = cellResult["answer"] as! String
     }
 

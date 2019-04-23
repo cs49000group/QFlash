@@ -39,12 +39,15 @@ class QuizScreenViewController: UIViewController {
     @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var answer4: UILabel!
     
+    @IBOutlet weak var resultsButton: UIButton!
+    
     var mcAnswer: String?
     var isShortAnswer = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(quiz)
+        resultsButton.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -67,6 +70,17 @@ class QuizScreenViewController: UIViewController {
             setGray()
 
         }
+        if let author = quiz["author"] as? PFUser {
+            author.fetchIfNeededInBackground { (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                else if author.username == PFUser.current()!.username {
+                    self.resultsButton.isHidden = false
+                }
+            }
+        }
+
     }
 
     @IBAction func answerSelected(_ sender: UIButton) {
@@ -124,16 +138,16 @@ class QuizScreenViewController: UIViewController {
         }
     }
     
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "resultSegue" {
+        if segue.identifier == "Results Segue" {
             let destination = segue.destination as? ResultsViewController
-            destination!.question = self.question
+            destination!.question = self.quiz["question"] as? String ?? ""
         }
         
         
-    }*/
+    }
     
     
   /*  @IBAction func onViewResults(_ sender: Any) {
