@@ -58,8 +58,8 @@ class CreateQuizViewController: UIViewController {
         newQuiz.saveInBackground { (success, error) in
             if(success){
                 print("success")
-                self.dismiss(animated: true, completion: nil)
-                //self.navigationController?.popToRootViewController(animated: true)
+                //self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
             }
             else{
                 print("Error")

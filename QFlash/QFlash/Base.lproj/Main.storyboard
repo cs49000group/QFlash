@@ -1062,16 +1062,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-Us-LDO">
-                                <rect key="frame" x="37.5" y="537" width="300" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissButton:" destination="fjI-ug-Hz2" eventType="touchUpInside" id="zIb-AG-KFx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55881638600000005" green="0.1030197727" blue="0.1163677075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1079,12 +1069,10 @@
                             <constraint firstItem="Seb-sx-qmO" firstAttribute="centerX" secondItem="asw-IU-vC0" secondAttribute="centerX" id="3IB-79-kDa"/>
                             <constraint firstItem="bS1-Ry-x5b" firstAttribute="leading" secondItem="b5h-fg-vzf" secondAttribute="leading" id="C7I-Kk-JnI"/>
                             <constraint firstItem="GUn-J3-qPM" firstAttribute="leading" secondItem="MwL-Ek-Ju4" secondAttribute="leading" id="Ctw-hQ-VL7"/>
-                            <constraint firstItem="aPO-Us-LDO" firstAttribute="centerX" secondItem="asw-IU-vC0" secondAttribute="centerX" id="HMm-OR-Q8u"/>
                             <constraint firstItem="Gc0-d0-51x" firstAttribute="width" secondItem="mnJ-SJ-rcc" secondAttribute="width" multiplier="0.8" id="KAR-Nx-joh"/>
                             <constraint firstItem="b5h-fg-vzf" firstAttribute="top" secondItem="bS1-Ry-x5b" secondAttribute="bottom" constant="8" id="Kji-c9-bfL"/>
                             <constraint firstItem="pc0-6w-eNT" firstAttribute="width" secondItem="b5h-fg-vzf" secondAttribute="width" id="Pl4-ma-kjJ"/>
                             <constraint firstItem="bS1-Ry-x5b" firstAttribute="top" secondItem="Gc0-d0-51x" secondAttribute="bottom" constant="16" id="Q3L-HZ-YM8"/>
-                            <constraint firstItem="aPO-Us-LDO" firstAttribute="width" secondItem="Seb-sx-qmO" secondAttribute="width" id="RRk-Qz-kLd"/>
                             <constraint firstItem="b5h-fg-vzf" firstAttribute="width" secondItem="Gc0-d0-51x" secondAttribute="width" id="Ywy-8o-tNo"/>
                             <constraint firstItem="GUn-J3-qPM" firstAttribute="width" secondItem="MwL-Ek-Ju4" secondAttribute="width" id="ZV6-zm-k0s"/>
                             <constraint firstItem="Seb-sx-qmO" firstAttribute="top" secondItem="GUn-J3-qPM" secondAttribute="bottom" constant="32" id="dDR-z0-PdH"/>
@@ -1097,7 +1085,6 @@
                             <constraint firstItem="ADD-xv-pEE" firstAttribute="top" secondItem="pc0-6w-eNT" secondAttribute="bottom" constant="16" id="mS7-op-oJz"/>
                             <constraint firstItem="MwL-Ek-Ju4" firstAttribute="leading" secondItem="ADD-xv-pEE" secondAttribute="leading" id="oxo-Xi-Dm3"/>
                             <constraint firstItem="MwL-Ek-Ju4" firstAttribute="width" secondItem="ADD-xv-pEE" secondAttribute="width" id="pNg-Pc-9yQ"/>
-                            <constraint firstItem="aPO-Us-LDO" firstAttribute="top" secondItem="Seb-sx-qmO" secondAttribute="bottom" constant="16" id="pj5-3I-h0X"/>
                             <constraint firstItem="pc0-6w-eNT" firstAttribute="top" secondItem="0Zm-FG-bv8" secondAttribute="bottom" constant="8" id="sL6-Mx-wkC"/>
                             <constraint firstItem="pc0-6w-eNT" firstAttribute="leading" secondItem="b5h-fg-vzf" secondAttribute="leading" id="tIL-Ax-xVe"/>
                             <constraint firstItem="b5h-fg-vzf" firstAttribute="leading" secondItem="Gc0-d0-51x" secondAttribute="leading" id="uOI-5y-f9x"/>
