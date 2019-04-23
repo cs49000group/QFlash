@@ -41,7 +41,7 @@ class ClassCell: UITableViewCell {
                     print(error.localizedDescription)
                 } else {
                     if let user = object as? PFUser {
-                        self.authorLabel.text = user.username as! String
+                        self.authorLabel.text = "Instructor: \(user.username as! String)"
                     }
                 }
             }
